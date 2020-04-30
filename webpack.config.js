@@ -69,14 +69,14 @@ module.exports = {
     port: 8080,
   },
   optimization: {
-    minimize: true,
+    minimize: !development,
     minimizer: [
       new TerserPlugin({
         sourceMap: development,
         cache: true,
         parallel: true,
         terserOptions: {
-          compress: true,
+          compress: !development,
           ecma: 6,
           ie8: false,
           mangle: true,
