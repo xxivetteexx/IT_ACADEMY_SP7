@@ -1,6 +1,9 @@
 // Cargamos un módulo nativo de node que nos gestiona rutas
 const path = require('path');
 
+// Cargamos webpack para definir plugins propios
+const webpack = require('webpack');
+
 // Este módulo minifica el bundle (el archivo compilado)
 const TerserPlugin = require('terser-webpack-plugin');
 
@@ -23,6 +26,12 @@ const publicPath = process.env.PUBLIC_PATH || '/';
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/index.html',
   hash: !development,
+});
+
+const processEnvPlugin = new webpack.DefinePlugin({
+  'process.env': {
+    PUBLIC_PATH: JSON.stringify(publicPath),
+  },
 });
 
 module.exports = {
@@ -87,6 +96,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
   devtool: development && 'source-map',
   plugins: [
-    HtmlWebpackPluginConfig
+    HtmlWebpackPluginConfig,
+    processEnvPlugin,
   ],
 };
