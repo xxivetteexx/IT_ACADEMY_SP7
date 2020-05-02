@@ -20,7 +20,7 @@ const paths = {
 //process.env nos permite acceder a las variables de entorno del sistema operativo
 //Accedemos a las variables definidas de entorno que hemos definido en el package.json
 const development = process.env.NODE_ENV === 'development';
-const publicPath = process.env.PUBLIC_PATH || '/';
+const publicPath = process.env.PUBLIC_PATH || '';
 
 // Set plugins
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -39,7 +39,7 @@ module.exports = {
   output: {
     path: paths.DIST,
     filename: 'bundle.js',
-    publicPath
+    publicPath: publicPath || '/',
   },
   module: {
     rules: [
