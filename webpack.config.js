@@ -49,7 +49,7 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.(jpg|jpeg|gif|png|wav)$/,
+        test: /\.(jpg|jpeg|gif|png|wav|mp3)$/,
         loader: 'file-loader',
         options: {
           publicPath: `${publicPath}/statics/images/`,
