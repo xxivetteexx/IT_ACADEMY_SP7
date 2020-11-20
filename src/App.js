@@ -1,6 +1,6 @@
 import React from 'react';
 
-const App = _ => {
+export default () => {
 
     return (
         <div>
@@ -8,5 +8,3 @@ const App = _ => {
         </div>
     );
 };
-
-export default App;
