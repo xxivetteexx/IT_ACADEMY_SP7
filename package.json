@@ -6,7 +6,8 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production PUBLIC_PATH=/ruta-del-proyecto-en-produccion webpack -p",
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --watch",
-    "upload": "node ./bin/upload.js"
+    "upload": "node ./bin/upload.js",
+    "remove-node_modules": "npx rimraf ./node_modules"
   },
   "author": "Pablo Monteserín",
   "license": "ISC",
