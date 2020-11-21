@@ -4,9 +4,6 @@ const path = require('path');
 // Cargamos webpack para definir plugins propios
 const webpack = require('webpack');
 
-// Este módulo minifica el bundle (el archivo compilado)
-const TerserPlugin = require('terser-webpack-plugin');
-
 // Este módulo inyecta el bundle en el HTML
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -76,22 +73,10 @@ module.exports = {
     disableHostCheck: true,
     hot: false,
     port: 8080,
+    open: true,
   },
   optimization: {
     minimize: !development,
-    minimizer: [
-      new TerserPlugin({
-        sourceMap: development,
-        cache: true,
-        parallel: true,
-        terserOptions: {
-          compress: !development,
-          ecma: 6,
-          ie8: false,
-          mangle: true,
-        },
-      }),
-    ],
   },
   mode: process.env.NODE_ENV,
   devtool: development && 'source-map',
