@@ -17,8 +17,7 @@ const paths = {
 //process.env nos permite acceder a las variables de entorno del sistema operativo
 //Accedemos a las variables definidas de entorno que hemos definido en el package.json
 const development = process.env.NODE_ENV === 'development';
-// Si usamos react-router y subimos nuestra aplicación a producción, habrá que poner la ruta en producción donde se va a alojar el proyecto
-const publicPath = './';
+const publicPath = process.env.PUBLIC_PATH || '';
 
 // Set plugins
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -33,11 +32,12 @@ const processEnvPlugin = new webpack.DefinePlugin({
 });
 
 module.exports = {
+  target: 'web',
   entry: path.join(paths.SRC, 'index.js'),
   output: {
     path: paths.DIST,
     filename: 'bundle.js',
-    publicPath: publicPath || '/',
+    publicPath: '',
   },
   module: {
     rules: [
@@ -47,29 +47,11 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.(jpg|jpeg|gif|png)$/,
+        test: /\.(jpg|jpeg|gif|png|wav|mp3)$/,
         loader: 'file-loader',
         options: {
           publicPath: `${publicPath}/statics/images/`,
           outputPath: './statics/images/',
-          name: '[name].[ext]',
-        },
-      },
-      {
-        test: /\.(wav|mp3)$/,
-        loader: 'file-loader',
-        options: {
-          publicPath: `${publicPath}/statics/audio/`,
-          outputPath: './statics/audio/',
-          name: '[name].[ext]',
-        },
-      },
-      {
-        test: /\.(mp4)$/,
-        loader: 'file-loader',
-        options: {
-          publicPath: `${publicPath}/statics/video/`,
-          outputPath: './statics/video/',
           name: '[name].[ext]',
         },
       },
@@ -90,8 +72,8 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     disableHostCheck: true,
-    hot: false,
-    port: 8085,
+    hot: true,
+    port: 8080,
     open: true,
   },
   optimization: {
