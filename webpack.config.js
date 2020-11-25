@@ -17,7 +17,8 @@ const paths = {
 //process.env nos permite acceder a las variables de entorno del sistema operativo
 //Accedemos a las variables definidas de entorno que hemos definido en el package.json
 const development = process.env.NODE_ENV === 'development';
-const publicPath = process.env.PUBLIC_PATH || '';
+// Si usamos react-router y subimos nuestra aplicación a producción, habrá que asignar a la variable publicPath la ruta donde se va a alojar el proyecto
+const publicPath = './';
 
 // Set plugins
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -47,11 +48,29 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.(jpg|jpeg|gif|png|wav|mp3)$/,
+        test: /\.(jpg|jpeg|gif|png)$/,
         loader: 'file-loader',
         options: {
           publicPath: `${publicPath}/statics/images/`,
           outputPath: './statics/images/',
+          name: '[name].[ext]',
+        },
+      },
+      {
+        test: /\.(wav|mp3)$/,
+        loader: 'file-loader',
+        options: {
+          publicPath: `${publicPath}/statics/audio/`,
+          outputPath: './statics/audio/',
+          name: '[name].[ext]',
+        },
+      },
+      {
+        test: /\.(mp4)$/,
+        loader: 'file-loader',
+        options: {
+          publicPath: `${publicPath}/statics/video/`,
+          outputPath: './statics/video/',
           name: '[name].[ext]',
         },
       },
