@@ -1,8 +1,9 @@
 import React from "react"
+import StyledComponents from "./StyledComponents"
 
 function Linia(props){
     return(
-        <h4>{props.text}</h4>
+        <p>{props.text}</p>  
     )
 }
 export default Linia
