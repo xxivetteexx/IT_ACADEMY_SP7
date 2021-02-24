@@ -1,5 +1,5 @@
 import React from "react"
-import StyledComponents from "./StyledComponents"
+// import React from "react"
 
 function Linia(props){
     return(
