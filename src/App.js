@@ -1,7 +1,6 @@
 import React, {Component} from "react"
 import data from "./db/db.json"
 // import Linia from "./components/Linia"
-import StyledComponents from "./components/StyledComponents"
 
 class App extends Component {
     constructor() {
@@ -28,11 +27,17 @@ class App extends Component {
     render() {
         const text = this.state.loading ? "Loading..." : this.state.textTheatre.text
         return (
-            <div>
-                <StyledComponents/>
-                {/* <button>Previous</button>
-                <button>After</button> */}
-                <p>{text}</p>
+            <div className="App">
+                <header className="App-header">
+                    <h1 className="App-title">The Theatre App</h1>
+                    <h4 className="App-subtitle">Click on the buttons below to see different theatrical texts.</h4>
+                    <div className="buttons">
+                        <button className="btn">Previous</button>
+                        <button className="btn">After</button>
+                    </div>
+                    <img src="/img/Vector.png" className="App-logo" alt="logo" />
+                    <p className="paragraph">{text}</p>
+                </header>
             </div>
         )
     }
@@ -40,28 +45,3 @@ class App extends Component {
 
 export default App
 
-
-// function App (){
-//     // const LiniaComponents = data.map(data =>
-//     //     <Linia key={data.id} text={data.text} />) 
-    
-//     const [data,setData]=useState([]);
-    
-//     const getData=()=>{
-//         fetch('/data/data.json')
-//             .then(response => response.json())
-//             .then(data => console.log(data))
-//     }
-
-//     useEffect(()=>{ getData()},[])
-    
-//     return (
-//         <div> 
-//             <StyledComponents/>
-//             <button>Previous</button>
-//             <button>After</button>
-//             {/* {data && data.length>0 && data.map((item)=><p>{item.about}</p>)} */}
-//             {/* {LiniaComponents}       */}
-//         </div>
-//     )
-// }
