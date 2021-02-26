@@ -1,31 +1,26 @@
-import React, {Component} from "react"
-import data from "./db/db.json"
-// import Linia from "./components/Linia"
+import React, {useState , useEffect} from "react"
+import axios from "axios";
 
-class App extends Component {
-    constructor() {
-        super()
-        this.state = {
-            loading: false,
-            textTheatre: []
-        }
-        // this.handleChange = this.handleChange.bind(this)
-    }
+
+
+function App () {
+    const [text, setText] = useState([]);
+    // const text = this.state.loading ? "Loading..." : this.state.textTheatre.text
     
-    componentDidMount() {
-        this.setState({loading: true})
-        fetch("http://localhost:3000/")
-            .then(response => response.json())
-            .then(data => { console.log(data)
-                this.setState({
-                    loading: false,
-                    textTheatre: data
-                })
+    useEffect(() => {
+        axios.get('http://localhost:3000/dataText')
+            .then(response => {
+                console.log(response.data)
+                setList(response.data.text);
             })
-    }
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
+   
     
-    render() {
-        const text = this.state.loading ? "Loading..." : this.state.textTheatre.text
+  
+        
         return (
             <div className="App">
                 <header className="App-header">
@@ -35,12 +30,12 @@ class App extends Component {
                         <button className="btn">Previous</button>
                         <button className="btn">After</button>
                     </div>
+                    {/* <p className="paragraph">Loading...</p> */}
                     <p className="paragraph">{text}</p>
                     <img className="App-img" src="/img/forms.png"  alt="logo" />  
                 </header>         
             </div>
         )
-    }
 }
 
 export default App
