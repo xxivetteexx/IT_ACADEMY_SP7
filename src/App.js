@@ -35,9 +35,9 @@ class App extends Component {
                         <button className="btn">Previous</button>
                         <button className="btn">After</button>
                     </div>
-                    <img src="/img/Vector.png" className="App-logo" alt="logo" />
                     <p className="paragraph">{text}</p>
-                </header>
+                    <img className="App-img" src="/img/forms.png"  alt="logo" />  
+                </header>         
             </div>
         )
     }

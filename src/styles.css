@@ -1,39 +1,28 @@
 *{
    box-sizing: border-box; 
+
 }
 
 html{
-    font-family: 'Noto Sans', sans-serif;
-}
-body { 
-    background-color: whitesmoke;
+    font-family: 'Source Serif Pro', serif;
+    background-color:#e5ddde;
 }
 
 .App {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-color: white;
-    margin: auto;
-    width: 100vh;
-    box-shadow:
-    /* The top layer shadow */
-        0 1px 1px rgba(0,0,0,0.15),
-            /* The second layer */
-        0 10px 0 -5px #eee,
-            /* The second layer shadow */
-        0 10px 1px -4px rgba(0,0,0,0.15),
-            /* The third layer */
-        0 20px 0 -10px #eee,
-            /* The third layer shadow */
-         0 20px 1px -9px rgba(0,0,0,0.15);
+    background-color: whitesmoke;
+    border:10px solid white;
+    padding-left:50px;
+    margin: 50px;
+    box-shadow:3px 3px 5px 6px #ccc;    
 }
 
 .App-header{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:flex-start;
     justify-content: center;
 }
 
@@ -41,14 +30,16 @@ body {
 .App-title{
     display: flex;
     align-items: center;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom:0;
+    font-size:5rem;
 }
 
 .App-subtitle{
     display: flex;
     align-items: center;
     font-weight: 400;
+    margin:0px 0px 20px 0px;
 }
 
 /* Buttons */
@@ -65,25 +56,40 @@ body {
     align-items: center;
     justify-content: center;
     cursor:pointer;
-    border:solid 1px #fea435;
-    background:#fea435;
-    color:white;
+    border:solid 1px black;
+    background-color: white;
+    color:black;    
+    margin-right:5px;
     padding: 1rem 3rem;
-    border-radius: 0.2rem;
-    margin:5px;
-    
+    font-family: 'Montserrat', sans-serif;    
 }
+
 
 .btn:focus{
     outline:none
 }
 
 .btn:hover, .btn:active{
-    background:#ffeba9;
-    color:#fea435;
-    border-color:#ffeba9;
+    background-color:black;
+    color:white;
+    border-color:black;
 }
 
-.paragraph{
-    margin:10px 0px 50px 0px;
+/* Image */
+.App-img{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin:40px 0px 40px 0px;
 }
+
+/* Text */
+.paragraph{
+    margin:10px 0px 10px 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:1rem;
+    font-weight: 400;
+}
+
+
