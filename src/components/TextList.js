@@ -1,31 +1,38 @@
 import React, {useState, useEffect} from "react"
 import axios from "axios";
 
-function DataFetching(){
+function TextList(){
+    // useState hook
     const [list, setList] = useState([]);
     
+    // useEffect hook
     useEffect(() => {
         axios
             .get('http://localhost:3000/dataText')
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
+                setList(response.data)
             })
-            // .then((todo)=> {
-            //     setList(todo.data)
-            // })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
 
+    {/* .map is an array */}
+    const renderedList = list.map((name)=> {
+            return <p key={name.id}>{name.text}</p>
+    })
+    
+
     return(
-        <div>
-            <ul> 
-                {list.map((name) => <li key={name.key}>{name.text}</li>)}
-            </ul>
+        <div className="list">
+            {renderedList}
         </div>
     )
 }
-export default DataFetching
+export default TextList
+
+
+
 
 

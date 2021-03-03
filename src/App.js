@@ -1,5 +1,5 @@
 import React from "react"
-import DataFetching from "./components/DataFetching";
+import TextListData from "./components/TextList";
 
 function App () {
 
@@ -19,12 +19,16 @@ function App () {
                 <div className="buttons">
                     <button className="btn">Previous</button>
                     <button className="btn">After</button>
-                     {/* <button onClick={decrement} className="btn">Previous</button> */}
+                    {/* <button onClick={decrement} className="btn">Previous</button> */}
                     {/* <button onClick={increment} className="btn">After</button> */}
                 </div>
-                <img className="App-img" src="/img/forms.png"  alt="logo" /> 
-                <DataFetching />
-            </header>         
+            </header>  
+            <div className="App-section1">
+                <TextListData />
+            </div> 
+            <div className="App-section2">
+                <img className="App-img" src="/img/forms.png"  alt="logo" />  
+            </div>        
         </div>
     )
 }
