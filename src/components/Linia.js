@@ -1,10 +1,9 @@
 import React from "react"
+// import React from "react"
 
 function Linia(props){
-    console.log(props)
-
     return(
-        <h4>{props.text}</h4>
+        <p>{props.text}</p>  
     )
 }
 export default Linia

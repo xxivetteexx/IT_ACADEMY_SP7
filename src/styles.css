@@ -1,1 +1,103 @@
+*{
+   box-sizing: border-box; 
+
+}
+
+html{
+    font-family: 'Source Serif Pro', serif;
+    background-color:#e5ddde;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: whitesmoke;
+    border:10px solid white;
+    padding-left:50px;
+    margin: 50px;
+    box-shadow:3px 3px 5px 6px #ccc;    
+}
+
+.App-header,.App-section1{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+}
+
+/* Title & subtitle */
+.App-title{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom:0;
+    font-size:5rem;
+}
+
+.App-subtitle{
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    margin:0px 0px 20px 0px;
+}
+
+/* Buttons */
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+    border:solid 1px black;
+    background-color: white;
+    color:black;    
+    margin-right:5px;
+    padding: 1rem 3rem;
+    font-family: 'Montserrat', sans-serif;    
+}
+
+
+.btn:focus{
+    outline:none
+}
+
+.btn:hover, .btn:active{
+    background-color:black;
+    color:white;
+    border-color:black;
+}
+
+/* Data */
+.App-section1{
+    font-family: 'Montserrat', sans-serif;   
+    font-weight: 400; 
+    font-size: 0.9rem;
+}
+
+/* Image */
+.App-section2{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin:40px 0px 40px 0px;
+
+}
+
+/* Text */
+.paragraph{
+    margin:10px 0px 10px 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size:1rem;
+    font-weight: 400;
+}
+
 

@@ -7,7 +7,8 @@
     "build": "cross-env NODE_ENV=production webpack",
     "start": "cross-env NODE_ENV=development webpack serve",
     "upload": "node ./bin/upload.js",
-    "remove-node_modules": "npx rimraf ./node_modules"
+    "remove-node_modules": "npx rimraf ./node_modules",
+    "server": "json-server --watch ./src/db/db.json"
   },
   "author": "Pablo Monteserín",
   "license": "ISC",
@@ -34,13 +35,15 @@
     "webpack-dev-server": "3.11.2"
   },
   "dependencies": {
-    "axios": "0.21.1",
+    "axios": "^0.21.1",
+    "axios-hooks": "^2.3.0",
     "easy-ftp": "0.4.1",
+    "json-server": "^0.16.3",
     "randomcolor": "^0.6.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-router": "5.2.0",
     "react-router-dom": "5.2.0",
-    "styled-components": "5.2.1"
+    "styled-components": "^5.2.1"
   }
 }
