@@ -6,21 +6,15 @@ function App () {
     const [index, setIndex] = useState(0);
     const [currentText, setCurrentText] = useState("");
 
-    //Fetching local data (API)
+    //Fetching local data (API) 
     useEffect(() => {
-        axios
-            .get('http://localhost:3000/dataText')
-            .then(response => {
-                console.log(response.data)
-                setList(response.data)
-
-            })
-            .catch((error) => {
-                console.log(error);
-                alert("New Error")
-            });
+        const fetchData = async() => { 
+            const result = await axios.get('http://localhost:3000/dataText');
+            setList(result.data) 
+        };
+        fetchData();  
     }, []);
-
+  
     // HANDLE PREVIOUS 
     const handlePrev = ()=> {
         if(index <= 0) {    
@@ -41,11 +35,6 @@ function App () {
         }
     };  
 
-    
-
-    //const listItems = list.map((e) =>
-    //    <Linia key={e.id} text={e.text} />
-    //);
 
     return (
         <div className="App">
@@ -53,14 +42,12 @@ function App () {
                 <h1 className="App-title">The Theatre App</h1>
                 <h4 className="App-subtitle">Click on the buttons below to see different theatrical texts.</h4>
                 <div className="buttons">
-                    <button className="btn" onClick={() => handlePrev()}>Previous Line</button>
-                    <button className="btn" onClick={() => handleNext()}>Next Line  </button>
-                </div>
-               
+                    <button className="btn" onClick={handlePrev}>Previous Line</button>
+                    <button className="btn" onClick={handleNext}>Next Line  </button>
+                </div>         
             </header>  
 
             <div className="App-section1">
-                {/* Index: {index} <br/> */}
                 {currentText}
             </div> 
             
