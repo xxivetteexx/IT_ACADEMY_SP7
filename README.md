@@ -1,8 +1,11 @@
 # IT ACADEMY SP7 REACT THEATRE APP
 
+<img width="1437" alt="Captura de Pantalla 2021-03-09 a les 17 05 10" src="https://user-images.githubusercontent.com/48102806/110500571-a4800f00-80f9-11eb-951d-45c70ded34d8.png">
+
+
 
 ###### PROJECT DEMO URL :
-###### PROJECT DEMO WITH CODEANDBOX:
+###### PROJECT DEMO WITH CODEANDBOX:https://codesandbox.io/s/the-theatre-app-hx6nj
 <hr>
 
 ### THE EXERCICE:
