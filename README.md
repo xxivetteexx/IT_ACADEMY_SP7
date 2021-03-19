@@ -1,12 +1,11 @@
 # IT ACADEMY SP7 REACT THEATRE APP
 
-<img width="1437" alt="Captura de Pantalla 2021-03-09 a les 17 05 10" src="https://user-images.githubusercontent.com/48102806/110500571-a4800f00-80f9-11eb-951d-45c70ded34d8.png">
-
+![Uasjas-03](https://user-images.githubusercontent.com/48102806/111806252-16aedb80-88d2-11eb-8725-6ae39ba6792d.png)
 
 
 ### [Web]() 💻
 ### [Codesandbox]() ⌨️
-<hr>
+
 
 ## Getting started 🚀
 Build an interactive website to learn theater texts. Apply the basic techniques and add styles and  actions to the web, so the user can interact with our application.
